@@ -10,7 +10,9 @@ function! ale#fixers#cmakeformat#Fix(buffer) abort
 
     return {
     \   'command': ale#Escape(l:executable)
+    \       . ' -i '
     \       . (empty(l:options) ? '' : ' ' . l:options)
-    \       . ' -'
+    \       . ' %t',
+    \   'read_temporary_file': 1,
     \}
 endfunction

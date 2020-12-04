@@ -53,6 +53,9 @@ map <leader>j :CtrlP<cr>
 " Quickly find and open a buffer
 map <leader>b :CtrlPBuffer<cr>
 
+" Quickly find and open a recently opened file
+map <leader>f :CtrlPMRU<CR>
+
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
@@ -153,7 +156,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'javascript': ['jshint'],
-\   'python': ['flake8'],
+\   'python': ['flake8', 'pylint'],
 \   'go': ['go', 'golint', 'errcheck']
 \}
 
@@ -165,6 +168,10 @@ let g:ale_set_highlights = 0
 " Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+<<<<<<< HEAD
+=======
+let g:ale_lint_on_insert_leave = 0
+>>>>>>> Updated plugins
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

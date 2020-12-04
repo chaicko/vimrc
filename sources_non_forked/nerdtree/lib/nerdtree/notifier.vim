@@ -15,8 +15,8 @@ function! s:Notifier.NotifyListeners(event, path, nerdtree, params)
     let event = g:NERDTreeEvent.New(a:nerdtree, a:path, a:event, a:params)
 
     for Listener in s:Notifier.GetListenersForEvent(a:event)
-        let l:Callback = type(Listener) == type(function('tr')) ? Listener : function(Listener)
-        call l:Callback(event)
+    	let Callback = type(Listener) == type(function('tr')) ? Listener : function(Listener)
+        call Callback(event)
     endfor
 endfunction
 
